@@ -36,11 +36,14 @@ public class CountryDataController {
 
             if(countryModel != null){
                 model.addAttribute("country", countryModel);
+                log.trace("Country with id " + id + " data displayed");
                 return "CountryDetails";
             }else{
+                log.trace("The country ID did not exit.");
                 return "/MissingData";
             }
         }catch(NumberFormatException e){
+            log.trace("URL Contains non int path variable");
             return "/MissingData";
         }
     }
