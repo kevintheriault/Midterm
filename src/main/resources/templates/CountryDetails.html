@@ -5,6 +5,23 @@
     <title>Country Details -- Midterm</title>
 </head>
 <body>
+<h1>Country Details</h1>
+<div th:object="${country}">
+    <label for="name">Country Name:</label>
+    <span id=name th:text="*{name}"> </span><br>
 
+    <label for="cont">Continent:</label>
+    <span id=cont th:text="*{continent}"> </span><br>
+
+    <label for="reg">Region:</label>
+    <span id=reg th:text="*{region}"> </span><br>
+
+    <label for="sa">Surface Area:</label>
+    <span id=sa th:text="*{surfaceArea}"> </span><br>
+
+    <label for="pop">Population:</label>
+    <span id=pop th:text="*{population}"> </span><br>
+
+</div>
 </body>
 </html>
