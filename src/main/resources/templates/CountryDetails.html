@@ -13,29 +13,30 @@
     <script th:inline="javascript">
         var country = [[${country.name}]];
     </script>
-
+    <br>
     <label for="name">Country Name:</label>
-    <span id=name th:text="*{name}"> </span><br>
+    <span id=name th:text="*{name}"> </span><br><br>
 
     <label for="cont">Continent:</label>
-    <span id=cont th:text="*{continent}"> </span><br>
+    <span id=cont th:text="*{continent}"> </span><br><br>
 
     <label for="reg">Region:</label>
-    <span id=reg th:text="*{region}"> </span><br>
+    <span id=reg th:text="*{region}"> </span><br><br>
 
     <label for="sa">Surface Area:</label>
-    <span id=sa th:text="*{surfaceArea}"> </span><br>
+    <span id=sa th:text="*{surfaceArea}"> </span><br><br>
 
     <label for="pop">Population:</label>
-    <span id=pop th:text="*{population}"> </span><br>
+    <span id=pop th:text="*{population}"> </span><br><br>
 </div>
+
 <div id="flag">
 <!--    Fetches flag from an API. If no flag displays a message -->
 <script>
     axios.get("https://restcountries.eu/rest/v2/name/" + country)
         .then(response => {
             document.getElementById("flag").innerHTML = "<img class=c_flag src=" + response.data[0].flag + ">"
-            console.log(response.data[0].flag)
+            // console.log(response.data[0].flag)
         })
         .catch(error => {
             document.getElementById("flag").innerHTML = "<p>Could not find flag data for this country</p>"
