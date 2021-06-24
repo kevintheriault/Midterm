@@ -20,10 +20,6 @@ h1{
     color: #00203FFF;
 }
 
-h2 {
-    color: #00203FFF;
-}
-
 table, th, td{
     border-collapse: collapse;
     border: 1px solid #00203FFF;
@@ -46,11 +42,12 @@ a:hover{
     text-decoration: underline;
 }
 
-.links{
-    display: flex;
-    justify-content: space-between;
-}
-
 label{
     font-weight: bolder;
+}
+
+footer{
+    position: absolute;
+    bottom: 20px;
+    font-size: 20px;
 }
