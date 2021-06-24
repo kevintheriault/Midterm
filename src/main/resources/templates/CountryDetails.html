@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Country Details -- Midterm</title>
-    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{css/styles.css}">
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <h1>Country Details</h1>
+<main>
 <div class=details th:object="${country}">
+    <script th:inline="javascript">
+        var country = [[${country.name}]];
+    </script>
+
     <label for="name">Country Name:</label>
     <span id=name th:text="*{name}"> </span><br>
 
@@ -22,7 +28,20 @@
 
     <label for="pop">Population:</label>
     <span id=pop th:text="*{population}"> </span><br>
-
 </div>
+<div id="flag">
+<!--    Fetches flag from an API. If no flag displays a message -->
+<script>
+    axios.get("https://restcountries.eu/rest/v2/name/" + country)
+        .then(response => {
+            document.getElementById("flag").innerHTML = "<img class=c_flag src=" + response.data[0].flag + ">"
+            console.log(response.data[0].flag)
+        })
+        .catch(error => {
+            document.getElementById("flag").innerHTML = "<p>Could not find flag data for this country</p>"
+        })
+</script>
+</div>
+</main>
 </body>
 </html>

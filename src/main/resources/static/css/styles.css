@@ -8,14 +8,12 @@ body{
 
 main{
     display: flex;
+    width: 80%;
+    margin: auto;
     justify-content: space-between;
 }
-.image{
-    display: flex;
-}
-
-img{
-    max-width: 300px;
+.c_flag{
+    max-width: 200px;
 }
 h1{
     text-align: center;
@@ -53,6 +51,6 @@ a:hover{
     justify-content: space-between;
 }
 
-.labels{
+label{
     font-weight: bolder;
 }
